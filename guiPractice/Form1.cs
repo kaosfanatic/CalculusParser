@@ -17,6 +17,17 @@ namespace guiPractice
             InitializeComponent();
         }
 
-        
+        private void quitToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var dialogOption = System.Windows.Forms.MessageBox.Show("Really exit?", "Exit Program", MessageBoxButtons.OKCancel);
+            
+            if(dialogOption == DialogResult.OK)
+                Application.Exit();
+        }
+
+        private void btnDerive_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
