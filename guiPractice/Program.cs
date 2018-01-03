@@ -43,12 +43,22 @@ namespace guiPractice
         {
             string output = String.Empty;
             string temp = String.Empty;
-            string ptnExponent = @"(.)\1\^(\d)\2";      //Reads: any character, the '^', then an integer.  Stores the character and the integer.
+            string ptnExponent = @"(.*?)\1\^(\d)\2";      //Reads: any character, the '^', then an integer.  Stores the character and the integer.
             string ptnArithm = @"[(.*?) [\+\-]*]+?";    //Reads: any character, as many times as needed until a + or - (if it exists), then repeats until end.
             string ptnChain = @"\((.*?)\1\)";           //Reads; check for anything within parentheses, stores.
             string ptnSin = @"sin" + ptnChain;          //Reads: sin(chain)
             string ptnCos = @"cos" + ptnChain;          //Reads: cos(chain)
-            //Still needed: tan(), log(), ln(), e^x, division, multiplication.
+            string ptnTan = @"tan" + ptnChain;          //Reads: tan(chain)
+            string ptnLog = @"log" + ptnChain;
+            string ptnLn = @"ln" + ptnChain;
+            string ptnE = @"e\^.";
+            string ptnCoef = @"\d+?[a-z]";
+            string ptnDivision = @"\((.+?)\)/\(?(.+?)\)?;";
+            //Just realized this may not work, unless I force input to be formatted a certain way.
+            //New method wouldn't use regular expressions for everything, will attempt over weekend.
+
+            //First, separate functions joined with + or -.
+            //Then, use multiplication/division to derive their factors, and adjust for exponents.
 
             for (int i = 0; i < input.Length; i++)
             {
