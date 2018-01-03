@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Text.RegularExpressions;
 
 namespace guiPractice
 { 
@@ -32,7 +33,7 @@ namespace guiPractice
 
         static string MainDerive(string input)
         {
-            string output = "0";
+            string output = String.Empty;
 
             return output;
         }
@@ -40,33 +41,24 @@ namespace guiPractice
 
         static string Parse(string input)
         {
-            string output = "";
-            string temp = "";
+            string output = String.Empty;
+            string temp = String.Empty;
+            string ptnExponent = @"(.)\1\^(\d)\2";      //Reads: any character, the '^', then an integer.  Stores the character and the integer.
+            string ptnArithm = @"[(.*?) [\+\-]*]+?";    //Reads: any character, as many times as needed until a + or - (if it exists), then repeats until end.
+            string ptnChain = @"\((.*?)\1\)";           //Reads; check for anything within parentheses, stores.
+            string ptnSin = @"sin" + ptnChain;          //Reads: sin(chain)
+            string ptnCos = @"cos" + ptnChain;          //Reads: cos(chain)
+            //Still needed: tan(), log(), ln(), e^x, division, multiplication.
 
             for (int i = 0; i < input.Length; i++)
             {
 
+                
                 if(input[i] == '+' || input[i] == '-')
                 {
                     output = output + Parse(temp);
                 }
-                if(input[i] == '^')
-                {
-                    int j = i;
-
-                    string coeff = "";
-
-                    while (!Char.IsLetter(input[j]))
-                    {
-                        j--;
-                    }
-                    while (!Char.IsWhiteSpace(input[j]))
-                    {
-                        coeff = coeff + input[j];
-                    }
-
-
-                }
+                
 
                 temp = temp + input[i];
             }

@@ -28,25 +28,19 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.quitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.macrosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.symbolsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.contextMenuStrip2 = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.contextMenuStrip3 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.stsName = new System.Windows.Forms.ToolStripStatusLabel();
+            this.stsAbout = new System.Windows.Forms.ToolStripStatusLabel();
             this.txtFuncInput = new System.Windows.Forms.TextBox();
             this.btnDerive = new System.Windows.Forms.Button();
-            this.stsAbout = new System.Windows.Forms.ToolStripStatusLabel();
             this.grpInput = new System.Windows.Forms.GroupBox();
-            this.lblInputVerify = new System.Windows.Forms.Label();
             this.grpOutput = new System.Windows.Forms.GroupBox();
-            this.lblOutputVerify = new System.Windows.Forms.Label();
             this.txtOutput = new System.Windows.Forms.TextBox();
             this.btnIntegrate = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
@@ -78,7 +72,7 @@
             // quitToolStripMenuItem
             // 
             this.quitToolStripMenuItem.Name = "quitToolStripMenuItem";
-            this.quitToolStripMenuItem.Size = new System.Drawing.Size(181, 26);
+            this.quitToolStripMenuItem.Size = new System.Drawing.Size(112, 26);
             this.quitToolStripMenuItem.Text = "Quit";
             this.quitToolStripMenuItem.Click += new System.EventHandler(this.quitToolStripMenuItem_Click);
             // 
@@ -94,32 +88,14 @@
             // macrosToolStripMenuItem
             // 
             this.macrosToolStripMenuItem.Name = "macrosToolStripMenuItem";
-            this.macrosToolStripMenuItem.Size = new System.Drawing.Size(181, 26);
+            this.macrosToolStripMenuItem.Size = new System.Drawing.Size(140, 26);
             this.macrosToolStripMenuItem.Text = "Macros";
             // 
             // symbolsToolStripMenuItem
             // 
             this.symbolsToolStripMenuItem.Name = "symbolsToolStripMenuItem";
-            this.symbolsToolStripMenuItem.Size = new System.Drawing.Size(181, 26);
+            this.symbolsToolStripMenuItem.Size = new System.Drawing.Size(140, 26);
             this.symbolsToolStripMenuItem.Text = "Symbols";
-            // 
-            // contextMenuStrip1
-            // 
-            this.contextMenuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
-            this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(61, 4);
-            // 
-            // contextMenuStrip2
-            // 
-            this.contextMenuStrip2.ImageScalingSize = new System.Drawing.Size(20, 20);
-            this.contextMenuStrip2.Name = "contextMenuStrip2";
-            this.contextMenuStrip2.Size = new System.Drawing.Size(61, 4);
-            // 
-            // contextMenuStrip3
-            // 
-            this.contextMenuStrip3.ImageScalingSize = new System.Drawing.Size(20, 20);
-            this.contextMenuStrip3.Name = "contextMenuStrip3";
-            this.contextMenuStrip3.Size = new System.Drawing.Size(61, 4);
             // 
             // statusStrip1
             // 
@@ -139,12 +115,19 @@
             this.stsName.Size = new System.Drawing.Size(105, 20);
             this.stsName.Text = "<component>";
             // 
+            // stsAbout
+            // 
+            this.stsAbout.Name = "stsAbout";
+            this.stsAbout.Size = new System.Drawing.Size(70, 20);
+            this.stsAbout.Text = "<About>";
+            // 
             // txtFuncInput
             // 
+            this.txtFuncInput.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtFuncInput.Location = new System.Drawing.Point(6, 37);
             this.txtFuncInput.Multiline = true;
             this.txtFuncInput.Name = "txtFuncInput";
-            this.txtFuncInput.Size = new System.Drawing.Size(290, 22);
+            this.txtFuncInput.Size = new System.Drawing.Size(300, 150);
             this.txtFuncInput.TabIndex = 6;
             // 
             // btnDerive
@@ -155,23 +138,16 @@
             this.btnDerive.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.ButtonShadow;
             this.btnDerive.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDerive.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.btnDerive.Location = new System.Drawing.Point(96, 107);
+            this.btnDerive.Location = new System.Drawing.Point(424, 39);
             this.btnDerive.Name = "btnDerive";
-            this.btnDerive.Size = new System.Drawing.Size(100, 36);
+            this.btnDerive.Size = new System.Drawing.Size(129, 36);
             this.btnDerive.TabIndex = 9;
             this.btnDerive.Text = "Derive";
             this.btnDerive.UseVisualStyleBackColor = false;
             this.btnDerive.Click += new System.EventHandler(this.btnDerive_Click);
             // 
-            // stsAbout
-            // 
-            this.stsAbout.Name = "stsAbout";
-            this.stsAbout.Size = new System.Drawing.Size(70, 20);
-            this.stsAbout.Text = "<About>";
-            // 
             // grpInput
             // 
-            this.grpInput.Controls.Add(this.lblInputVerify);
             this.grpInput.Controls.Add(this.txtFuncInput);
             this.grpInput.Controls.Add(this.btnDerive);
             this.grpInput.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -182,19 +158,8 @@
             this.grpInput.TabStop = false;
             this.grpInput.Text = "Function";
             // 
-            // lblInputVerify
-            // 
-            this.lblInputVerify.AutoSize = true;
-            this.lblInputVerify.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblInputVerify.Location = new System.Drawing.Point(331, 38);
-            this.lblInputVerify.Name = "lblInputVerify";
-            this.lblInputVerify.Size = new System.Drawing.Size(75, 24);
-            this.lblInputVerify.TabIndex = 10;
-            this.lblInputVerify.Text = "<verify>";
-            // 
             // grpOutput
             // 
-            this.grpOutput.Controls.Add(this.lblOutputVerify);
             this.grpOutput.Controls.Add(this.txtOutput);
             this.grpOutput.Controls.Add(this.btnIntegrate);
             this.grpOutput.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -205,22 +170,13 @@
             this.grpOutput.TabStop = false;
             this.grpOutput.Text = "Derivative";
             // 
-            // lblOutputVerify
-            // 
-            this.lblOutputVerify.AutoSize = true;
-            this.lblOutputVerify.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblOutputVerify.Location = new System.Drawing.Point(331, 38);
-            this.lblOutputVerify.Name = "lblOutputVerify";
-            this.lblOutputVerify.Size = new System.Drawing.Size(75, 24);
-            this.lblOutputVerify.TabIndex = 10;
-            this.lblOutputVerify.Text = "<verify>";
-            // 
             // txtOutput
             // 
+            this.txtOutput.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtOutput.Location = new System.Drawing.Point(6, 37);
             this.txtOutput.Multiline = true;
             this.txtOutput.Name = "txtOutput";
-            this.txtOutput.Size = new System.Drawing.Size(290, 38);
+            this.txtOutput.Size = new System.Drawing.Size(300, 150);
             this.txtOutput.TabIndex = 6;
             // 
             // btnIntegrate
@@ -231,11 +187,11 @@
             this.btnIntegrate.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.ButtonShadow;
             this.btnIntegrate.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnIntegrate.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.btnIntegrate.Location = new System.Drawing.Point(96, 107);
+            this.btnIntegrate.Location = new System.Drawing.Point(424, 24);
             this.btnIntegrate.Name = "btnIntegrate";
-            this.btnIntegrate.Size = new System.Drawing.Size(100, 36);
+            this.btnIntegrate.Size = new System.Drawing.Size(129, 36);
             this.btnIntegrate.TabIndex = 9;
-            this.btnIntegrate.Text = "Derive";
+            this.btnIntegrate.Text = "Integrate";
             this.btnIntegrate.UseVisualStyleBackColor = false;
             // 
             // frmMain
@@ -276,18 +232,13 @@
         private System.Windows.Forms.ToolStripMenuItem toolsToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem macrosToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem symbolsToolStripMenuItem;
-        private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
-        private System.Windows.Forms.ContextMenuStrip contextMenuStrip2;
-        private System.Windows.Forms.ContextMenuStrip contextMenuStrip3;
         private System.Windows.Forms.StatusStrip statusStrip1;
         private System.Windows.Forms.ToolStripStatusLabel stsName;
         private System.Windows.Forms.TextBox txtFuncInput;
         private System.Windows.Forms.Button btnDerive;
         private System.Windows.Forms.ToolStripStatusLabel stsAbout;
         private System.Windows.Forms.GroupBox grpInput;
-        private System.Windows.Forms.Label lblInputVerify;
         private System.Windows.Forms.GroupBox grpOutput;
-        private System.Windows.Forms.Label lblOutputVerify;
         private System.Windows.Forms.TextBox txtOutput;
         private System.Windows.Forms.Button btnIntegrate;
     }
