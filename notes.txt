@@ -1,0 +1,47 @@
+Alternate method (non-regex)
+
+-First, separate function based on parentheses to ensure that I don't dismantle a trigonometric, or logarithmic function.  Do this recursively to account for nested parentheses.  Ignore division, trig, and logs until later.
+-Secondly, separate the functions within the parentheses at any addition or subtraction point.
+-Thirdly, derive these separate functions using the various rules of derivatives.
+-Lastly, recombine the functions to display the derivative.
+
+
+
+func Parentheses
+
+  for each character, move through string
+    when encountered open parenthese, modify an array or stack (bool?).  When a closed parenthese is met, pop the stack.  When the stack is empty, a full sub-function is contained.
+    recursively call this function with the substring.
+    Ensure that we do not mess up trig or logs.
+  
+  Separate this string
+  Run exponents
+  Run multiplication/divison
+  Run trig/logs/e
+  
+    
+
+    
+func Separate
+
+  find + or -, run the substrings back through the system.
+  
+func exponents
+ 
+  find instances of x^n, transform them.
+  
+ func multi/division
+ 
+  find instances of multiplication or division, derive their factors, then derive the expression
+  
+func trig/logs/e
+ 
+  transform trig and log functions to the appropriate value, leave e^x alone.
+  
+  
+
+  
+But BEFORE ALL
+
+  Ensure input works properly, create test function.
+  
